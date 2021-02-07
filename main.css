@@ -1,0 +1,94 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	background: #A6EE10FF;
+	animation-name: multicolor;
+	animation-duration: 15s;
+	animation-iteration-count: infinite;
+	font-family: 'Montserrat', sans-serif;
+}
+@keyframes multicolor {
+	0% {background: #FF0000FF;}
+	14.28% {background: #FF6A00FF;}
+	28.57% {background: #FFF800FF;}
+	42.85% {background: #4CFF00FF;}
+	57.14% {background: #00FFFFFF;}
+	71.43% {background: #0026FFFF;}
+	85.71% {background: #B200FFFF;}
+	100% {background: #FF004AFF;}
+}
+h1 {
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	-webkit-text-stroke: 0.1px black;
+	color: white;
+	font-size: 90px;
+	text-shadow: grey 0 5px;
+}
+.contenedor-galeria {
+	width: 800px;
+	height: 320px;
+	overflow: hidden;
+	margin: 50px auto;
+	box-shadow: 0 0 20px 10px rgba(0,0,0,0.35);
+}
+.contenedor-galeria li {
+	position: relative;
+	display: block;
+	width: 160px;
+	float: left;
+	box-shadow: 0 0 25px 10px rgba(0,0,0,0.5);
+	transition: all 0.5s;
+}
+.contenedor-galeria ul:hover li {
+	width: 40px;
+	filter: brightness(50%);
+}
+.contenedor-galeria ul li:hover {
+	width: 640px;
+	filter: brightness(100%);
+}
+.contenedor-galeria li img {
+	display: block;
+	width: 640px;
+	height: 100%;
+}
+.titulo-imagen {
+	background: rgba(0,0,0,0.8);
+	position: absolute;
+	top: 100%;
+	width: 100%;
+	display: block;
+	transition: all 0.5s ease;
+	animation: cambia-color 10s linear infinite;
+	background-size: 400% 400%;
+}
+@keyframes cambia-color {
+	0% {background-position 0%, 50%;}
+	50% {background-position 100%, 50%;}
+	100% {background-position 0%, 100%;}
+}
+.titulo-imagen a {
+	display: block;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	padding: 20px;
+	font-size: 20px;
+	text-shadow: 0 1px 2px black;
+	transition: all 0.5s ease;
+}
+.contenedor-galeria ul li:hover .titulo-imagen {
+	top: 0%;
+	box-shadow: 0 0 25px 10px rgba(0,0,0,0.5);
+}
+.titulo-imagen:hover a {
+	transform: scale(1.1);
+	transition: all 0.5s ease;
+}
+.titulo-imagen:active {
+	background: rgba(255,255,255,0.5);
+}
